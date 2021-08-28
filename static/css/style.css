@@ -1,0 +1,26 @@
+.wrapper {
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    width: 70%;
+    height: 200px;
+    border:1px solid;
+    margin:  auto ;
+    display: none;
+    text-align: center;
+    border-color: black;
+    background: white;
+}
+
+.text_with_shadows{
+
+color: darkgreen;
+line-height: 50px;
+font-size: 50px;
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.26), 0 4px 12px rgba(0, 0, 0, 0.31);
+}
+
+form{
+    position: relative;
+}
+

@@ -1,24 +1,39 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
-
-
-class User(db.Model):
-    __tablename__ = 'user_data_name'
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    middle_name = db.Column(db.String())
-    bornData = db.Column(db.Date())
-    gender = db.Column(db.String())
+import os
+from dotenv import  load_dotenv
+from sqlalchemy import Column, ForeignKey, Integer, String, Date
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
 
 
-class User_data(db.Model):
+load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+user = os.getenv("user")
+pswd = os.getenv("password")
+
+
+Base = declarative_base()
+engine = create_engine(f"postgresql://{user}:{pswd}@194.67.203.117:5437/trainingTest")
+
+
+class User(Base):
     __tablename__ = 'user_data'
+    __table_args__ = {"schema": "lixakov"}
 
-    id = db.Column(db.Integer, primary_key=True)
-    citizenship = db.Column(db.String())
-    comment = db.Column(db.String())
-    education = db.Column(db.String())
-    user_id = db.Column(db.Integer, db.ForeignKey('user_data_name.id'))
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250))
+    middle_name = Column(String(250))
+    bornData = Column(Date)
+    gender = Column(String(250))
+
+
+class User_data(Base):
+    __tablename__ = 'user_data_meta'
+    __table_args__ = {"schema": "lixakov"}
+
+    id = Column(Integer, primary_key=True)
+    citizenship = Column(String(250))
+    comment = Column(String(250))
+    education = Column(String(250))
+    phone = Column(String(250))
+    user_id = Column(Integer, ForeignKey(User.id))
 

@@ -8,12 +8,13 @@
 <body>
 <form method="post" id="currentForm">
     <h4>Имя</h4>
-    <input type="text" name="userName" size="40">
+    <input type="text" name="userName" size="40" required>
     <h4>Фамилия</h4>
-    <input type="text" name="userSurname" size="40">
-
+    <input type="text" name="userSurname" size="40" required>
+    <h4>Телефон</h4>
+    <input type="text" name="phone" placeholder="+7-(XXX)-XXX-XX-XX" required>
     <div><h4>Пол:</h4>
-   <input type="radio" name="gender" value="Man">Мужчина
+   <input type="radio" name="gender" value="Man" required>Мужчина
    <input type="radio" name="gender" value="Women">Женщина
     </div><br>
 
@@ -32,7 +33,6 @@
     <option value="2">Высшее неоконченное</option>
     <option value="3">Высшее</option>
     </select></p>
-
     <h4>О себе:</h4>
     <textarea name="comment" id="comment"></textarea>
 
@@ -42,6 +42,7 @@
     <div style="display: none" id="warn_lang"> <h4 style="color: red"> Только латиница </h4> </div>
     <div style="display: none" id="warn_empty"> <h4 style="color: red"> Заполните поле </h4> </div>
 </form>
+    <div><button id="add">Добавить пользователя</button></div>
 <div class="wrapper text_with_shadows">
     <p> Отправлено &#10004; </p>
 </div>

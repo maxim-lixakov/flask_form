@@ -24,3 +24,24 @@ form{
     position: relative;
 }
 
+phone-mask {
+  display: inline-block;
+  width: auto;
+  padding: 0.2em;
+  border: 1px solid #9e9e9e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+phone-mask>span {
+  color: #9e9e9e;
+}
+phone-mask>input {
+  all: initial;
+  border: none;
+  width: 1ch;
+  padding: 0 0.4ch;
+}
+phone-mask>input[error] {
+  color: red;
+}
+

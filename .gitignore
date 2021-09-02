@@ -1,4 +1,8 @@
 env
 .env
 .idea
+<<<<<<< HEAD
 __pycache__
+=======
+__pycache__
+>>>>>>> 1df695c60f0109fca77a612273178742a0e5aeee

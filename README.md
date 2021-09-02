@@ -1,1 +1,1 @@
-training_tes
+training_test
